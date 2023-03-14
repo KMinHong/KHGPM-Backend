@@ -3,6 +3,7 @@ package com.example.demo.domain.board.controller;
 import com.example.demo.domain.board.controller.request.BoardRequest;
 import com.example.demo.domain.board.entity.Board;
 import com.example.demo.domain.board.service.BoardService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,20 +12,25 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/board")
+@RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class BoardController {
 
     final private BoardService boardService;
 
-    public BoardController(BoardService boardService) {
-        this.boardService = boardService;
-    }
-
+    /*
     @PostMapping("/register")
     public void boardRegister (@RequestBody BoardRequest boardRequest) {
         log.info("boardRegister()");
 
         boardService.register(boardRequest);
+    }
+     */
+    @PostMapping("/register")
+    public Board boardRegister (@RequestBody BoardRequest boardRequest) {
+        log.info("boardRegister()");
+
+        return boardService.register(boardRequest);
     }
 
     @GetMapping("/list")
