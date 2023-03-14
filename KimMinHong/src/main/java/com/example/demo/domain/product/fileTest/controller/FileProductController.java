@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/file")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
-public class FileController {
+public class FileProductController {
 
     @PostMapping(value = "/uploadImgsWithText",
             consumes = { MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_JSON_VALUE })

@@ -1,7 +1,6 @@
 package com.example.demo.domain.fileTest.controller;
 
 import com.example.demo.domain.fileTest.controller.request.RequestFileInfo;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
